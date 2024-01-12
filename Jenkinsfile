@@ -5,7 +5,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'php --version'
-                sh 'echo "Hello World"'
+                sh 'echo "Hello World this is a test"'
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
