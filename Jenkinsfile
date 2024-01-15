@@ -1,6 +1,6 @@
 agent { label '!windows' }
 stage('SonarQube') {
-    steps {
+    step{
         script { scannerHome = tool 'SonarQube Scanner' }
         withSonarQubeEnv('SonarQube') {
             sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=[key]"
