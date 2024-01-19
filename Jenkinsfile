@@ -1,12 +1,13 @@
-pipeline {
-    agent { label '!windows' }
+pipeline{
+agent { label '!windows' }
+stages {
     stage('SonarQube') {
-       steps {
+    steps{
         script { scannerHome = tool 'SonarQubeScanner' }
         withSonarQubeEnv('SonarQubeScanner') {
-            sh "${scannerHome}/bin/sonar-scanner-Dsonar.projectKey=OWS"
-            }
+            sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=OWS"
         }
     }
-
+}
+}
 }
